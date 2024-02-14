@@ -1,0 +1,55 @@
+{
+    "voucherList" : {
+        "A가1형" : {
+            "5" : {
+                "fullPrice" : "688,000",
+                "grant" : "620,000",
+                "actualPrice" : "68,000"
+            },
+            "10" : {
+                "fullPrice" : "1,376,000",
+                "grant" : "1,100,000",
+                "actualPrice" : "276,000"
+            },
+            "15" : {
+                "fullPrice" : "2,064,000",
+                "grant" : "1,444,000",
+                "actualPrice" : "620,000"
+            }
+        },
+        "A통합1형" : {
+            "5" : {
+                "fullPrice" : "688,000",
+                "grant" : "537,000",
+                "actualPrice" : "151,000"
+            },
+            "10" : {
+                "fullPrice" : "1,376,000",
+                "grant" : "949,000",
+                "actualPrice" : "427,000"
+            },
+            "15" : {
+                "fullPrice" : "2,064,000",
+                "grant" : "1,238,000",
+                "actualPrice" : "826,000"
+            }
+        },
+        "A라1형" : {
+            "5" : {
+                "fullPrice" : "688,000",
+                "grant" : "433,000",
+                "actualPrice" : "255,000"
+            },
+            "10" : {
+                "fullPrice" : "1,376,000",
+                "grant" : "729,000",
+                "actualPrice" : "647,000"
+            },
+            "15" : {
+                "fullPrice" : "2,064,000",
+                "grant" : "991,000",
+                "actualPrice" : "1,073,000"
+            }
+        }
+    }
+}
