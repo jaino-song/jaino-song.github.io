@@ -1,0 +1,19 @@
+{
+    "bankAccountList" : [
+        {
+                    "area" : "Namdonggu", 
+                    "bankName" : "우리은행",
+                    "accNum" : "1005-004-115917"
+        },
+        {
+                    "area" : "Seogu",
+                    "bankName" : "농협",
+                    "accNum" : "351-1268-7728-43"
+        },
+        {
+                    "area" : "Bupyunggu",
+                    "bankName" : "우리은행",
+                    "accNum" : "1005-804-498698"
+        }
+    ]
+}

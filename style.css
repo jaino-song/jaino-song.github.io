@@ -1,0 +1,75 @@
+#page-title {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    font-size: 2rem;
+}
+
+body {
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+header {
+    position: absolute;
+    top: 10px;
+    right: 50px;
+}
+
+.main-content {
+    background-color: #fff;
+    margin: 0;
+    padding: 10px 20px;
+}
+
+#nav-bar {
+    display: flex;
+    gap : 30px;
+}
+
+#nav-bar a {
+    text-decoration: none;
+    color: black;
+}
+
+.function-name {
+    text-align: center;
+    margin: 0;
+}
+
+.function-explanation {
+    margin: 10px auto;
+    text-align: center;
+}
+
+.msg-input {
+    margin: 20px auto;
+}
+
+.copy-button {
+    margin: 0 auto;
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+}
+
+.name-label {
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.create-text-button {
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+}
+
+.name-input-container {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
