@@ -1,0 +1,150 @@
+#page-title {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    font-size: 2rem;
+}
+
+body {
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+header {
+    position: absolute;
+    top: 10px;
+    right: 50px;
+}
+
+.main-content {
+    background-color: #fff;
+    margin: 0;
+    padding: 10px 20px;
+}
+
+#nav-bar {
+    display: flex;
+    gap : 30px;
+}
+
+#nav-bar a {
+    text-decoration: none;
+    color: black;
+}
+
+.function-name {
+    text-align: center;
+    margin: 0;
+}
+
+.function-explanation {
+    margin: 10px auto;
+    text-align: center;
+}
+
+.msg-input {
+    margin: 20px auto;
+}
+
+.copy-button {
+    margin: 0 auto;
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+}
+
+.name-label {
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.create-text-button {
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+}
+
+.name-input-container {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+
+@media screen and (max-width: 600px) {
+    #page-title {
+        position: static;
+        text-align: center;
+    }
+    header {
+        position: static;
+        width: 100%;
+        height: 10%;
+        margin: 0;
+    }
+    #nav-bar {
+        gap: 10px;
+        width: 100%;
+        justify-content: space-around;
+        margin: 0 auto;
+    }
+    body {
+        display: block;
+        width: 100% !important;
+        height: 100vh;
+        margin: 0;
+    }
+    .main-content {
+        width: 100% !important;
+        padding: 0;
+        margin: 0;
+        height: 100% !important;
+    }
+
+    main {
+        width: 100vw;
+    }
+
+    .msg-input {
+        width: 90vw;
+    }
+
+    .form {
+        margin: 0 auto;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+        font-size: 1rem;
+
+        select {
+            width: 50vw;
+            height: 3vh;
+            font-size: 1rem;
+        }
+
+        input {
+            width: 50vw;
+            height: 3vh;
+            font-size: 1rem;
+        }
+
+    }
+
+    .function-explanation {
+        width: 80vw;
+        text-align: center;
+    }
+
+    .name-input-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    
+}
