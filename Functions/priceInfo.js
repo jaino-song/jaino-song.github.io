@@ -100,25 +100,30 @@ export default async function priceInfo() {
     const type_select = document.createElement('select');
     type_select.classList.add('type-select');
     type_select.innerHTML = `
-        <option disabled selected value>선택하세요</option>
+        <option disabled selected>선택하세요</option>
+        <option disabled>---------A형 첫째아-----------</option>
         <option value="A가1형">A가-1형</option>
         <option value="A통합1형">A통합-1형</option>
         <option value="A라1형">A라-1형</option>
+        <option disabled>---------A형 둘째아-----------</option>
+        <option value="A가2형">A가-2형</option>
+        <option value="A통합2형">A통합-2형</option>
+        <option value="A라2형">A라-2형</option>
+        <option disabled>---------A형 셋째아-----------</option>
+        <option value="A가3형">A가-3형</option>
+        <option value="A통합3형">A통합-3형</option>
+        <option value="A라3형">A라-3형</option>
+        <option disabled>---------쌍생아 인력 1-----------</option>
+        <option value="B가1형">B가-1형</option>
+        <option value="B통합1형">B통합-1형</option>
+        <option value="B라1형">B라-1형</option>
+        <option disabled>---------쌍생아 인력 2-----------</option>
+        <option value="B가2형">B가-2형</option>
+        <option value="B통합2형">B통합-2형</option>
+        <option value="B라2형">B라-2형</option>
     `;
 
     /* 가격표 정보 입력 후 위에 추가
-    <option value="A가-2형">A가-2형</option>
-        <option value="A통합-2형">A통합-2형</option>
-        <option value="A라-2형">A라-2형</option>
-        <option value="A가-3형">A가-3형</option>
-        <option value="A통합-3형">A통합-3형</option>
-        <option value="A라-3형">A라-3형</option>
-        <option value="B가-1형">B가-1형</option>
-        <option value="B통합-1형">B통합-1형</option>
-        <option value="B라-1형">B라-1형</option>
-        <option value="B가-2형">B가-2형</option>
-        <option value="B통합-2형">B통합-2형</option>
-        <option value="B라-2형">B라-2형</option>
         <option value="C가-1형">C가-1형</option>
         <option value="C통합-1형">C통합-1형</option>
         <option value="C라-1형">C라-1형</option>
@@ -128,7 +133,7 @@ export default async function priceInfo() {
         */
     type_select.addEventListener('change', () => {
         type = type_select.value;
-        if (type[0] === 'A' && type[2] === '1') {    
+        if (type[0] === 'A' && (type[2] === '1' || type[3] === '1')) {    
             days_input.innerHTML = `
                 <option disabled selected value>선택하세요</option>
                 <option value="5">5일</option>
