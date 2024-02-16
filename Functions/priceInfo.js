@@ -128,7 +128,7 @@ export default async function priceInfo() {
         */
     type_select.addEventListener('change', () => {
         type = type_select.value;
-        if (type[0] === 'A' && type[1] === '가' && type[2] === '1') {    
+        if (type[0] === 'A' && type[2] === '1') {    
             days_input.innerHTML = `
                 <option disabled selected value>선택하세요</option>
                 <option value="5">5일</option>
