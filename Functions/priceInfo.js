@@ -190,6 +190,7 @@ export default async function priceInfo() {
         <option value="0">남동구</option>
         <option value="1">서구</option>
         <option value="2">부평구</option>
+        <option value="3">자이노 컴퍼니</option>
     `;
     area_select.addEventListener('change', () => {
         area = area_select.value;

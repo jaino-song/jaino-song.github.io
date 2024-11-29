@@ -14,6 +14,11 @@
                     "area" : "Bupyunggu",
                     "bankName" : "우리은행",
                     "accNum" : "1005-804-498698"
+        },
+        {
+                    "area" : "Jaino",
+                    "bankName" : "신한은행",
+                    "accNum" : "110-579-098623"
         }
     ]
 }
