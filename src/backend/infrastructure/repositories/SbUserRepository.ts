@@ -1,5 +1,5 @@
-import { UserRepository } from "@/backend/domain/repositories/userRepository";
-import { User } from "@/backend/domain/entities/user";
+import { UserRepository } from "@/backend/domain/repositories/UserRepository";
+import { User } from "@/backend/domain/entities/User";
 import { supabase } from "@/backend/utils/SbClient";
 
 export class SbUserRepository implements UserRepository {

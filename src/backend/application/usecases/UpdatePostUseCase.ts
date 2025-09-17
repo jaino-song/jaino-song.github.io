@@ -1,6 +1,6 @@
-import { Post } from "@/backend/domain/entities/post";
-import { PostRepository } from "@/backend/domain/repositories/postRepository";
-import { UpdatePostDto } from "../dto/updatePostDto";
+import { Post } from "@/backend/domain/entities/Post";
+import { PostRepository } from "@/backend/domain/repositories/PostRepository";
+import { UpdatePostDto } from "../dto/UpdatePostDto";
 
 export class UpdatePostUseCase {
     constructor(private postRepository: PostRepository) {}

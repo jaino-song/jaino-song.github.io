@@ -1,4 +1,4 @@
-import { Tag } from "../entities/tag";
+import { Tag } from "../entities/Tag";
 
 export interface TagRepository {
     create(tag: Tag): Promise<Tag>;

@@ -1,5 +1,5 @@
-import { TagRepository } from "@/backend/domain/repositories/tagRepository";
-import { Tag } from "@/backend/domain/entities/tag";
+import { TagRepository } from "@/backend/domain/repositories/TagRepository";
+import { Tag } from "@/backend/domain/entities/Tag";
 import { supabase } from "@/backend/utils/SbClient";
 
 export class SbTagRepository implements TagRepository {

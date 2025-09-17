@@ -1,5 +1,5 @@
-import { PostRepository } from "@/backend/domain/repositories/postRepository";
-import { Post } from "@/backend/domain/entities/post";
+import { PostRepository } from "@/backend/domain/repositories/PostRepository";
+import { Post } from "@/backend/domain/entities/Post";
 import { supabase } from "@/backend/utils/SbClient";
 
 export class SbPostRepository implements PostRepository {

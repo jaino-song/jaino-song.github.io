@@ -1,8 +1,8 @@
-import { Post } from "@/backend/domain/entities/post";
-import { PostRepository } from "@/backend/domain/repositories/postRepository";
-import { CreatePostDto } from "../dto/createPostDto";
+import { Post } from "@/backend/domain/entities/Post";
+import { PostRepository } from "@/backend/domain/repositories/PostRepository";
+import { CreatePostDto } from "../dto/CreatePostDto";
 
-export class CreatePostUsecase {
+export class CreatePostUseCase {
     constructor(private postRepository: PostRepository) {}
 
     async execute(dto: CreatePostDto): Promise<Post> {
