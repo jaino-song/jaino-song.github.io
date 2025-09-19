@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { CreatePostUseCase } from "@/backend/application/usecases/CreatePostUseCase";
 import { SbPostRepository } from "@/backend/infrastructure/repositories/SbPostRepository";
 import { UpdatePostUseCase } from "@/backend/application/usecases/UpdatePostUseCase";
-import { DeletePostUseCase } from "@/backend/application/usecases/GeletePostUseCase";
+import { DeletePostUseCase } from "@/backend/application/usecases/DeletePostUseCase";
 import { DeletePostDto } from "@/backend/application/dto/DeletePostDto";
 import { UpdatePostDto } from "@/backend/application/dto/UpdatePostDto";
 import { CreatePostDto } from "@/backend/application/dto/CreatePostDto";
