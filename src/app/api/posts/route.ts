@@ -16,11 +16,17 @@ const updatePostUseCase = new UpdatePostUseCase(postRepository);
 const getPostUseCase = new GetPostUseCase(postRepository);
 
 export async function GET(req: NextRequest) {
-    const body = await req.json();
-    const dto: GetPostDto = { id: body.id };
+    const { searchParams } = new URL(req.url);
+    const id = searchParams.get('id');
+    
+    if (!id) {
+        return NextResponse.json({ error: "Post ID is required" }, { status: 400 });
+    }
+
+    const dto: GetPostDto = { id };
     try {
-    const post = await getPostUseCase.execute(dto);
-    return NextResponse.json(post);
+        const post = await getPostUseCase.execute(dto);
+        return NextResponse.json(post);
     } catch (error: any) {
         return NextResponse.json({ error: error.message }, { status: 500 });
     }
