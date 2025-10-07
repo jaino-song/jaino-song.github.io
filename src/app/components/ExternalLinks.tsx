@@ -1,4 +1,4 @@
-'use client';
+import Image from "next/image";
 
 const ExternalLinks = () => {
   return (
@@ -9,11 +9,9 @@ const ExternalLinks = () => {
         rel="noopener noreferrer"
         className="flex items-center gap-2"
       >
-        <div className="justify-start text-Subtitle text-base font-bold font-['Poppins'] leading-normal">
+        <div className="justify-start flex justify-center items-center pointer-cursor gap-2 text-Main-Text text-base font-bold font-['Poppins'] leading-normal">
+          <Image src="/svg/ExternalLink.svg" alt="LinkedIn" width={24} height={24} className="invert brightness-0" />
           LinkedIn
-        </div>
-        <div className="w-4 h-2 relative origin-top-left -rotate-45 overflow-hidden">
-          <div className="w-2.5 h-2.5 left-[13.24px] top-[13.22px] absolute origin-top-left -rotate-180 bg-Subtitle" />
         </div>
       </a>
       <a
@@ -22,11 +20,9 @@ const ExternalLinks = () => {
         rel="noopener noreferrer"
         className="flex items-center gap-2"
       >
-        <div className="justify-start text-Subtitle text-base font-bold font-['Poppins'] leading-normal">
+        <div className="justify-start flex justify-center items-center pointer-cursor gap-2 text-Main-Text text-base font-bold font-['Poppins'] leading-normal">
+          <Image src="/svg/ExternalLink.svg" alt="Github" width={24} height={24} className="invert brightness-0" />
           GIthub
-        </div>
-        <div className="w-4 h-2 relative origin-top-left -rotate-45 overflow-hidden">
-          <div className="w-2.5 h-2.5 left-[13.24px] top-[13.22px] absolute origin-top-left -rotate-180 bg-Subtitle" />
         </div>
       </a>
     </div>
