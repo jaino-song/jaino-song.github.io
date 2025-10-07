@@ -22,12 +22,12 @@ const Projects = ({
     projects 
 }: ProjectsProps) => {
     return (
-        <section className="w-full px-12 py-20 inline-flex flex-col justify-center items-center gap-12">
-            <div className="w-[800px] flex flex-col justify-start items-center gap-4">
-                <h2 className="self-stretch text-center justify-start text-Main-Text text-4xl font-bold font-['Poppins'] leading-10">
+        <section className="w-full py-30 inline-flex flex-col justify-center items-center gap-20">
+            <div className="w-[800px] flex flex-col justify-start items-center gap-5">
+                <h2 className="self-stretch text-center justify-start text-Main-Text text-5xl font-bold font-['Poppins'] leading-10">
                     {title}
                 </h2>
-                <h4 className="self-stretch text-center justify-start text-Subtitle text-xl font-medium font-['Poppins'] leading-snug">
+                <h4 className="self-stretch text-center justify-start text-neutral-400 text-lg font-medium font-['Poppins'] leading-snug">
                     {subtitle}
                 </h4>
             </div>

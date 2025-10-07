@@ -8,7 +8,7 @@ const NavButton = ({ text, onClick }: { text: string, onClick: (text: Page) => v
   
   return (
     <button 
-      className="relative w-30 h-15 rounded-[50px] cursor-pointer z-10"
+      className="relative w-30 h-14 rounded-[50px] cursor-pointer z-10"
       onClick={() => {
         onClick(text as Page);
       }}

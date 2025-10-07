@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import Header from "../components/Header";
 import Hero from "../components/Hero";
 import AboutDavid from "../components/AboutDavid";
 import Projects from "../components/Projects";
@@ -18,64 +17,67 @@ export default function Work() {
   const projectDetailsMap: { [key: string]: ProjectDetails } = {
     "1": {
       title: "Fiterview",
-      subtitle: "Full-stack e-commerce solution with modern payment integration and admin dashboard",
+      subtitle: "AI-powered mock interview platform with resume analysis and real-time feedback system",
+      sampleGIFs: ["/webm/fiterview-demo-1.webm", "/webm/fiterview-demo-2.webm"],
       overview: [
-        "This e-commerce platform was built to provide a seamless shopping experience for both customers and administrators. The project features a modern React frontend with a robust Node.js backend, integrated with Stripe for secure payments and PostgreSQL for data management.",
-        "The platform handles thousands of daily transactions and provides real-time inventory updates across multiple warehouses.",
-        "Built with scalability in mind, the system can handle peak loads during sales events and automatically scales based on demand."
+        "This AI-powered interview preparation platform was built to help candidates practice interviews with personalized, job-specific questions. The project features a modern Next.js frontend with clean architecture backend, integrated with LLM APIs for intelligent question generation and PostgreSQL for data persistence.",
+        "The platform generates tailored interview questions based on uploaded resumes and target job descriptions, providing realistic practice sessions with both behavioral and technical coverage.",
+        "Built with a layered architecture following clean architecture principles, separating domain logic from adapters to ensure maintainability and scalability across different AI providers and services."
       ],
       technicalImplementation: [
-        "Implemented server-side rendering with Next.js for improved SEO and performance, resulting in 40% faster page loads.",
-        "Developed a microservices architecture using Docker and Kubernetes for easy scaling and deployment.",
-        "Created a custom caching layer with Redis to reduce database queries by 60% and improve response times."
+        "Implemented Next.js App Router with server actions for optimized data fetching and improved performance, separating UI concerns from business logic.",
+        "Developed a clean architecture pattern with domain-driven design, organizing code into application, domain, and infrastructure layers for maintainable and testable code.",
+        "Created pluggable adapter system for LLM, STT/TTS, and email services, allowing seamless provider switching without affecting core business logic."
       ],
       keyFeatures: [
-        "User authentication and authorization system",
-        "Product catalog with search and filtering",
-        "Shopping cart and checkout process",
-        "Stripe payment integration",
-        "Admin dashboard for inventory management",
-        "Order tracking and notifications",
-        "Customer reviews and ratings",
-        "Email notifications with SendGrid"
+        "Resume and job description upload system",
+        "AI-powered question generation tailored to JD",
+        "Live mock interviews with voice or text input",
+        "Speech-to-text and text-to-speech integration",
+        "Rubric-based scoring and feedback system",
+        "Session history and progress tracking",
+        "NextAuth.js authentication with OAuth providers",
+        "Privacy-first design with account-scoped data"
       ],
-      demoVideoUrl: "https://example.com/demo",
-      techStacks: ["React", "Next.js", "Node.js", "PostgreSQL", "Stripe", "TailwindCSS", "Docker", "Kubernetes"],
-      sourceCodeUrl: "https://github.com/example/fiterview",
-      productionUrl: "https://fiterview.example.com"
+      demoVideoUrl: "https://fiterview.com",
+      techStacks: ["React", "Next.js", "TypeScript", "PostgreSQL", "Prisma", "TailwindCSS", "NextAuth.js", "OpenAI"],
+      sourceCodeUrl: "https://github.com/jaino-song/Fiterview",
+      productionUrl: "https://fiterview.com"
     },
     "2": {
       title: "ONNS",
-      subtitle: "Mobile-first task management app with real-time collaboration features",
+      subtitle: "Weather-driven outfit community platform with real-time social sharing features",
       sampleGIFs: ["/webm/onns-demo-1.webm", "/webm/onns-demo-2.webm"],
+      demoVideoUrl: "https://onns.vercel.app",
       overview: [
-        "This e-commerce platform was built to provide a seamless shopping experience for both customers and administrators. The project features a modern React frontend with a robust Node.js backend, integrated with Stripe for secure payments and PostgreSQL for data management.",
-        "Real-time collaboration enables teams to work together seamlessly across different time zones.",
-        "The mobile-first approach ensures a consistent experience across all devices."
+        "This weather-driven outfit platform was built to help users decide what to wear by combining real-time weather data with social sharing. The project features a modern Next.js frontend with clean architecture backend, integrated with Supabase for real-time updates and database management.",
+        "Real-time feeds enable users to share outfit choices and see what others are wearing based on current feels-like temperature and seasonal conditions.",
+        "The mobile-first responsive design ensures a consistent experience across all devices, making outfit selection simple and social."
       ],
       technicalImplementation: [
-        "Implemented WebSocket connections for real-time updates and notifications across all connected clients.",
-        "Built with React Native for cross-platform mobile support on iOS and Android.",
-        "Integrated Supabase for real-time database subscriptions and authentication."
+        "Implemented Supabase Realtime subscriptions for instant updates of new posts and comments across all connected clients.",
+        "Built with Next.js App Router and server actions for optimized data fetching and improved SEO performance.",
+        "Integrated clean architecture pattern separating domain logic from infrastructure adapters for maintainable and testable code."
       ],
       keyFeatures: [
-        "User authentication and authorization system",
-        "Product catalog with search and filtering",
-        "Shopping cart and checkout process",
-        "Admin dashboard for inventory management",
-        "Real-time collaboration features",
-        "Push notifications",
-        "Offline mode support",
-        "Team workspace management"
+        "Real-time weather and feels-like temperature display",
+        "Outfit post creation with photo uploads",
+        "Weather and season-based filtering system",
+        "Social authentication with OAuth providers",
+        "Real-time feed updates via Supabase Realtime",
+        "Comments and reactions on outfit posts",
+        "Responsive design optimized for all devices",
+        "Community-driven outfit recommendations"
       ],
-      demoVideoUrl: "https://example.com/demo",
-      techStacks: ["React", "Next.js", "Supabase", "Axios", "TailwindCSS", "Zustand", "OAuth", "REST API", "TypeScript"],
-      sourceCodeUrl: "https://github.com/example/onns",
-      productionUrl: "https://onns.example.com"
+      techStacks: ["React", "Next.js", "Supabase", "TailwindCSS", "Zustand", "TypeScript", "PostgreSQL"],
+      sourceCodeUrl: "https://github.com/jaino-song/ONNS",
+      productionUrl: "https://onns.vercel.app"
     },
     "3": {
       title: "FC Back Office",
       subtitle: "Comprehensive admin dashboard for managing business operations and analytics",
+      sampleGIFs: ["/webm/fc-backoffice-demo-1.webm", "/webm/fc-backoffice-demo-2.webm"],
+      demoVideoUrl: "https://fc-backoffice.vercel.app",
       overview: [
         "This e-commerce platform was built to provide a seamless shopping experience for both customers and administrators. The project features a modern React frontend with a robust Node.js backend, integrated with Stripe for secure payments and PostgreSQL for data management.",
         "The back office system provides comprehensive analytics and reporting tools for business intelligence.",
@@ -96,10 +98,9 @@ export default function Work() {
         "Automated reporting",
         "Data export functionality"
       ],
-      demoVideoUrl: "https://example.com/demo",
-      techStacks: ["React", "Next.js", "TypeScript", "PostgreSQL", "TailwindCSS", "Chart.js", "REST API", "JWT"],
-      sourceCodeUrl: "https://github.com/example/fc-backoffice",
-      productionUrl: "https://backoffice.example.com"
+      techStacks: ["React", "Next.js", "TypeScript", "PostgreSQL", "TailwindCSS", "Supabase", "REST API", "JWT"],
+      sourceCodeUrl: "https://github.com/jaino-song/FC-BackOffice",
+      productionUrl: "https://fc-backoffice.vercel.app"
     }
   };
 
@@ -115,26 +116,25 @@ export default function Work() {
     {
       id: "1",
       title: "Fiterview",
-      description: "Full-stack e-commerce solution built with React, Node.js, and PostgreSQL",
+      description: "AI-powered mock interview platform with resume analysis and real-time feedback system",
       onClick: () => handleProjectClick("1"),
     },
     {
       id: "2",
       title: "ONNS",
-      description: "Mobile-first task management app with real-time collaboration features",
+      description: "Weather-driven outfit community platform with real-time social sharing features",
       onClick: () => handleProjectClick("2"),
     },
     {
       id: "3",
       title: "FC Back Office",
-      description: "Comprehensive admin dashboard for managing business operations",
+      description: "Comprehensive admin dashboard for managing business operations and analytics",
       onClick: () => handleProjectClick("3"),
     },
   ];
 
   return (
     <>
-      <Header />
       <Hero />
       <AboutDavid />
       <Projects projects={projectsData} />

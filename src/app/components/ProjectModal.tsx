@@ -2,6 +2,7 @@
 import { ReactNode } from "react";
 import SampleGif from "./SampleGif";
 import Image from "next/image";
+import ProjectSection from "./ProjectSection";
 
 export interface ProjectDetails {
     title: string;
@@ -23,9 +24,9 @@ interface ProjectModalProps {
 
 const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
     return (
-        <div className="w-full min-h-full relative bg-Background rounded-[20px] p-25 flex flex-col justify-around">
+        <section className="w-full min-h-full relative bg-Background rounded-[20px] p-25 flex flex-col justify-around">
             {/* Close Button */}
-            <button 
+            <button
                 onClick={onClose}
                 className="absolute right-[25px] top-[25px] w-12 h-12 bg-ButtonBg rounded-xl hover:opacity-80 transition-opacity flex items-center justify-center"
             >
@@ -36,24 +37,22 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
             </button>
 
             {/* Content */}
-            <div className="max-w-[836px] mx-auto pt-[60px] inline-flex flex-col justify-center items-center gap-12">
+            <article className="w-full pt-1 inline-flex flex-col justify-center items-center gap-20">
                 {/* Header */}
-                <div className="w-full flex flex-col justify-start items-start gap-5">
-                    <div className="self-stretch inline-flex justify-start items-center">
-                        <div className="text-center justify-center text-Main-Text text-6xl font-bold font-['Poppins'] leading-loose">
-                            {project.title}
-                        </div>
+                <div className="w-full flex flex-col justify-start items-start">
+                    <div className="text-center justify-center text-Main-Text text-5xl font-bold font-['Poppins'] leading-loose">
+                        {project.title}
                     </div>
-                    <div className="self-stretch justify-start text-Subtitle text-xl font-normal font-['Poppins'] leading-normal">
+                    <div className="self-stretch justify-start text-Subtitle text-lg font-normal font-['Poppins'] leading-snug">
                         {project.subtitle}
                     </div>
                 </div>
 
                 {/* Sample GIFs */}
                 {project.sampleGIFs && project.sampleGIFs.length > 0 && (
-                    <div className="self-stretch inline-flex justify-start items-start gap-12 flex-wrap">
+                    <div className="self-stretch inline-flex justify-center items-start gap-2 flex-wrap">
                         {project.sampleGIFs.map((gif, index) => (
-                            <div key={index} className="w-96 h-[852px] relative rounded-[40px] overflow-hidden">
+                            <div key={index} className="w-100 h-[80vh] relative rounded-[40px] overflow-hidden">
                                 <SampleGif gif={gif} />
                             </div>
                         ))}
@@ -61,62 +60,25 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                 )}
 
                 {/* Main Content */}
-                <div className="w-full flex flex-col justify-center items-center gap-14">
+                <article className="w-full flex flex-col justify-center items-center gap-14">
                     <div className="self-stretch flex flex-col justify-center items-center gap-10">
-                        {/* Project Overview */}
-                        <div className="self-stretch min-h-72 p-5 bg-SubComponentBg rounded-xl flex flex-col justify-start items-start gap-4">
-                            <div className="self-stretch justify-start text-Text text-2xl font-semibold font-['Poppins'] leading-snug">
-                                Project Overview
-                            </div>
-                            {project.overview.map((item, index) => (
-                                <div key={index} className="w-full inline-flex justify-start items-start gap-1">
-                                    <div className="px-[5px] py-2 inline-flex flex-col justify-end items-center gap-2.5 overflow-hidden">
-                                        <div className="w-1.5 h-1.5 bg-Subtitle rounded-full" />
-                                    </div>
-                                    <div className="flex-1 justify-start text-Subtitle text-sm font-normal font-['Poppins'] leading-tight">
-                                        {item}
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-
-                        {/* Technical Implementation */}
-                        <div className="self-stretch min-h-72 p-5 bg-SubComponentBg rounded-xl flex flex-col justify-start items-start gap-4">
-                            <div className="self-stretch justify-start text-Text text-2xl font-semibold font-['Poppins'] leading-snug">
-                                Technical Implementation
-                            </div>
-                            {project.technicalImplementation.map((item, index) => (
-                                <div key={index} className="w-full inline-flex justify-start items-start gap-1">
-                                    <div className="px-[5px] py-2 inline-flex flex-col justify-end items-center gap-2.5 overflow-hidden">
-                                        <div className="w-1.5 h-1.5 bg-Subtitle rounded-full" />
-                                    </div>
-                                    <div className="flex-1 justify-start text-Subtitle text-sm font-normal font-['Poppins'] leading-tight">
-                                        {item}
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-
-                        {/* Key Features */}
-                        <div className="self-stretch min-h-72 p-5 bg-SubComponentBg rounded-xl flex flex-col justify-start items-start gap-4">
-                            <div className="self-stretch justify-start text-Text text-2xl font-semibold font-['Poppins'] leading-snug">
-                                Key Features
-                            </div>
-                            <div className="self-stretch flex flex-col justify-start items-start gap-3">
-                                {project.keyFeatures.map((feature, index) => (
-                                    <div key={index} className="self-stretch inline-flex justify-start items-center gap-2">
-                                        <div className="w-4 h-4 relative border-emerald-500 overflow-hidden flex items-center justify-center">
-                                            <svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M1 4L3.5 6.5L9 1" stroke="#10b981" strokeWidth="1.33" strokeLinecap="round" strokeLinejoin="round"/>
-                                            </svg>
-                                        </div>
-                                        <div className="flex-1 justify-start text-Subtitle text-sm font-normal font-['Poppins'] leading-none">
-                                            {feature}
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
+                        <ProjectSection 
+                            title="Project Overview" 
+                            items={project.overview} 
+                            iconType="bullet" 
+                        />
+                        
+                        <ProjectSection 
+                            title="Technical Implementation" 
+                            items={project.technicalImplementation} 
+                            iconType="bullet" 
+                        />
+                        
+                        <ProjectSection 
+                            title="Key Features" 
+                            items={project.keyFeatures} 
+                            iconType="checkmark" 
+                        />
                     </div>
 
                     {/* Demo Section */}
@@ -134,7 +96,7 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                                             <div className="w-20 h-20 opacity-90 bg-white rounded-[40px] inline-flex justify-center items-center">
                                                 <div className="w-8 h-8 relative border-gray-800 overflow-hidden flex items-center justify-center">
                                                     <svg width="20" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M3 3L17 12L3 21V3Z" fill="#1f2937" stroke="#1f2937" strokeWidth="2.67" strokeLinecap="round" strokeLinejoin="round"/>
+                                                        <path d="M3 3L17 12L3 21V3Z" fill="#1f2937" stroke="#1f2937" strokeWidth="2.67" strokeLinecap="round" strokeLinejoin="round" />
                                                     </svg>
                                                 </div>
                                             </div>
@@ -163,13 +125,13 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                             ))}
                         </div>
                     </div>
-                </div>
+                </article>
 
                 {/* Action Buttons */}
-                <div className="w-full max-w-[720px] flex flex-col justify-start items-start gap-4 pb-8">
+                <footer className="w-full max-w-[720px] flex flex-col justify-start items-start gap-4 pb-8">
                     <div className="self-stretch inline-flex justify-center items-center gap-4 flex-wrap">
                         {project.sourceCodeUrl && (
-                            <a 
+                            <a
                                 href={project.sourceCodeUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -184,7 +146,7 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                             </a>
                         )}
                         {project.productionUrl && (
-                            <a 
+                            <a
                                 href={project.productionUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -199,9 +161,9 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                             </a>
                         )}
                     </div>
-                </div>
-            </div>
-        </div>
+                </footer>
+            </article>
+        </section>
     );
 };
 
