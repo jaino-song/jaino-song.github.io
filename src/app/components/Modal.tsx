@@ -1,5 +1,5 @@
 "use client";
-import { ReactNode, useEffect } from "react";
+import { ReactNode, useEffect, useState, cloneElement, isValidElement } from "react";
 
 interface ModalProps {
     isOpen: boolean;
@@ -8,34 +8,54 @@ interface ModalProps {
 }
 
 const Modal = ({ isOpen, onClose, children }: ModalProps) => {
+    const [isClosing, setIsClosing] = useState(false);
+    const [shouldRender, setShouldRender] = useState(isOpen);
+
     useEffect(() => {
         if (isOpen) {
+            setShouldRender(true);
+            setIsClosing(false);
             document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = 'unset';
         }
-        
+    }, [isOpen]);
+
+    useEffect(() => {
         return () => {
             document.body.style.overflow = 'unset';
         };
-    }, [isOpen]);
+    }, []);
 
-    if (!isOpen) return null;
+    const handleClose = () => {
+        if (isClosing) return; // Prevent double trigger
+        setIsClosing(true);
+        setTimeout(() => {
+            setShouldRender(false);
+            document.body.style.overflow = 'unset';
+            onClose();
+        }, 300);
+    };
+
+    if (!shouldRender) return null;
+
+    // Clone children and pass handleClose as onClose prop
+    const childrenWithProps = isValidElement(children)
+        ? cloneElement(children as React.ReactElement<any>, { onClose: handleClose })
+        : children;
 
     return (
         <div 
-            className="fixed inset-0 z-50 flex items-center justify-center"
-            onClick={onClose}
+            className={`fixed inset-0 z-50 flex items-center justify-center ${isClosing ? 'animate-fadeOut' : 'animate-fadeIn'}`}
+            onClick={handleClose}
         >
             {/* Overlay with 80% opacity black */}
-            <div className="absolute inset-0 bg-black opacity-80" />
+            <div className={`absolute inset-0 bg-black opacity-80 ${isClosing ? 'animate-fadeOut' : 'animate-fadeIn'}`} />
             
             {/* Modal content - 90vw and 90vh, scrollable */}
             <div 
-                className="relative w-255 h-[90vh] overflow-y-auto bg-Background rounded-[20px] z-10"
+                className={`relative w-255 h-[90vh] overflow-y-auto bg-Background rounded-[20px] z-10 ${isClosing ? 'animate-scaleOut' : 'animate-scaleIn'}`}
                 onClick={(e) => e.stopPropagation()}
             >
-                {children}
+                {childrenWithProps}
             </div>
         </div>
     );

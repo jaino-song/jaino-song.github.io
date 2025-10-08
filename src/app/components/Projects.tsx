@@ -1,12 +1,11 @@
 "use client";
 import ProjectCard from "./ProjectCard";
-import { ReactNode } from "react";
 
 export interface Project {
     id: string;
     title: string;
     description: string;
-    image?: ReactNode;
+    image: string;
     onClick: () => void;
 }
 
@@ -17,7 +16,7 @@ interface ProjectsProps {
 }
 
 const Projects = ({ 
-    title = "Featured Projects", 
+    title = "Featured Projects",  
     subtitle = "Here are some of my recent projects that showcase my skills and creativity",
     projects 
 }: ProjectsProps) => {
@@ -36,8 +35,8 @@ const Projects = ({
                     <ProjectCard
                         key={project.id}
                         title={project.title}
+                        image={project.image || ""}
                         description={project.description}
-                        image={project.image}
                         onClick={project.onClick}
                     />
                 ))}

@@ -20,6 +20,49 @@
   --font-mono: var(--font-geist-mono);
   --font-poppins: var(--font-poppins), sans-serif;
   --font-roboto: Roboto, sans-serif;
+  
+  --animate-fadeIn: fadeIn 0.3s ease-out;
+  --animate-scaleIn: scaleIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -33,4 +76,30 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-poppins), var(--font-roboto), sans-serif;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.3s ease-out;
+}
+
+.animate-fadeOut {
+  animation: fadeOut 0.3s ease-out;
+}
+
+.animate-scaleOut {
+  animation: scaleOut 0.3s ease-out;
+}
+
+/* Toast customization */
+.Toastify__toast--warning {
+  background-color: #3a3a3a !important;
+  color: #ffffff !important;
+}
+
+.Toastify__progress-bar--warning {
+  background: #ffffff !important;
 }

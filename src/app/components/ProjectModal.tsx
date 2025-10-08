@@ -15,6 +15,7 @@ export interface ProjectDetails {
     techStacks: string[];
     sourceCodeUrl?: string;
     productionUrl?: string;
+    completed: boolean;
 }
 
 interface ProjectModalProps {
@@ -49,15 +50,15 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                 </div>
 
                 {/* Sample GIFs */}
-                {project.sampleGIFs && project.sampleGIFs.length > 0 && (
+                {/* {project.sampleGIFs && project.sampleGIFs.length > 0 && (
                     <div className="self-stretch inline-flex justify-center items-start gap-2 flex-wrap">
                         {project.sampleGIFs.map((gif, index) => (
-                            <div key={index} className="w-100 h-[80vh] relative rounded-[40px] overflow-hidden">
+                            <div key={index} className="w-80 h-[80vh] relative rounded-[40px] overflow-hidden">
                                 <SampleGif gif={gif} />
                             </div>
                         ))}
                     </div>
-                )}
+                )} */}
 
                 {/* Main Content */}
                 <article className="w-full flex flex-col justify-center items-center gap-14">
@@ -82,7 +83,7 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                     </div>
 
                     {/* Demo Section */}
-                    {project.demoVideoUrl && (
+                    {/* {project.demoVideoUrl && (
                         <div className="self-stretch flex flex-col justify-center items-center gap-6">
                             <div className="self-stretch flex flex-col justify-center items-center gap-4">
                                 <div className="self-stretch justify-start text-Main-Text text-3xl font-semibold font-['Poppins'] leading-normal">
@@ -108,7 +109,7 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                                 </div>
                             </div>
                         </div>
-                    )}
+                    )} */}
 
                     {/* Tech Stacks */}
                     <div className="self-stretch flex flex-col justify-start items-start gap-4">

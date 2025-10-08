@@ -6,11 +6,13 @@ const SampleGif = ({ gif }: { gif: string }) => {
   const isVideo = gif.endsWith('.webm') || gif.endsWith('.mp4');
   
   return (
-    <div className="relative w-full h-full flex items-center justify-center">
+    <div 
+      className="relative w-full h-full flex items-center justify-center bg-[url('/png/iPhone.png')] bg-cover bg-center"
+    >
       {/* Content (video or image) */}
       {isVideo ? (
         <video 
-          className="absolute inset-0 w-[384px] z-10 object-cover mt-18 border-image-none"
+          className="absolute inset-0 w-[250px] z-10 object-cover border-image-none"
           autoPlay
           loop
           muted

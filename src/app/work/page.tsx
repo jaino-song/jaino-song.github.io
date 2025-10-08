@@ -8,6 +8,8 @@ import ProjectModal, { ProjectDetails } from "../components/ProjectModal";
 import { Project } from "../components/Projects";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Work() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -42,7 +44,8 @@ export default function Work() {
       demoVideoUrl: "https://fiterview.com",
       techStacks: ["React", "Next.js", "TypeScript", "PostgreSQL", "Prisma", "TailwindCSS", "NextAuth.js", "OpenAI"],
       sourceCodeUrl: "https://github.com/jaino-song/Fiterview",
-      productionUrl: "https://fiterview.com"
+      productionUrl: "https://fiterview.com",
+      completed: true,
     },
     "2": {
       title: "ONNS",
@@ -71,7 +74,8 @@ export default function Work() {
       ],
       techStacks: ["React", "Next.js", "Supabase", "TailwindCSS", "Zustand", "TypeScript", "PostgreSQL"],
       sourceCodeUrl: "https://github.com/jaino-song/ONNS",
-      productionUrl: "https://onns.vercel.app"
+      productionUrl: "https://onns.vercel.app",
+      completed: true,
     },
     "3": {
       title: "FC Back Office",
@@ -100,33 +104,40 @@ export default function Work() {
       ],
       techStacks: ["React", "Next.js", "TypeScript", "PostgreSQL", "TailwindCSS", "Supabase", "REST API", "JWT"],
       sourceCodeUrl: "https://github.com/jaino-song/FC-BackOffice",
-      productionUrl: "https://fc-backoffice.vercel.app"
+      productionUrl: "https://fc-backoffice.vercel.app",
+      completed: false,
     }
   };
 
   const handleProjectClick = (projectId: string) => {
     const details = projectDetailsMap[projectId];
-    if (details) {
+    if (details && details.completed) {
       setSelectedProject(details);
       setIsModalOpen(true);
+    }
+    else {
+      toast.warning("Project Under Work");
     }
   };
 
   const projectsData: Project[] = [
     {
       id: "1",
+      image: "/png/Fiterview.png",
       title: "Fiterview",
       description: "AI-powered mock interview platform with resume analysis and real-time feedback system",
       onClick: () => handleProjectClick("1"),
     },
     {
       id: "2",
+      image: "/png/ONNS.png",
       title: "ONNS",
       description: "Weather-driven outfit community platform with real-time social sharing features",
       onClick: () => handleProjectClick("2"),
     },
     {
       id: "3",
+      image: "/png/FC-BackOffice.png",
       title: "FC Back Office",
       description: "Comprehensive admin dashboard for managing business operations and analytics",
       onClick: () => handleProjectClick("3"),
@@ -146,6 +157,15 @@ export default function Work() {
       )}
       <Contact />
       <Footer />
+      <ToastContainer 
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        closeOnClick
+        pauseOnHover
+        draggable
+        theme="dark"
+      />
     </>
   );
 }

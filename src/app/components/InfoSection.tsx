@@ -1,14 +1,14 @@
 "use client";
+import Image from "next/image";
 import Button from "./Button";
-import { ReactNode } from "react";
 
 interface InfoSectionProps {
     title: string;
+    image: string;
     subtitle: string;
     text: string;
     buttonText: string;
     buttonOnClick: () => void;
-    image?: ReactNode;
     id?: string;
     width?: number;
 }
@@ -38,7 +38,7 @@ const InfoSection = ({
             <article className="w-full inline-flex justify-center items-center gap-20">
                 {/* Text and Button */}
                 <div className="flex flex-col justify-around items-center gap-20">
-                    <div className="self-stretch text-Text text-base font-medium font-['Poppins'] leading-7">
+                    <div className="self-stretch text-Text text-balance font-medium font-['Poppins'] leading-7">
                         {text}
                     </div>
                     <Button
@@ -50,18 +50,7 @@ const InfoSection = ({
                     />
                 </div>
                 {/* Image */}
-                {image ? (
-                    <div className="w-60 h-60 bg-gray-200 rounded-xl inline-flex flex-col justify-center items-center">
-                        {image}
-                    </div>
-                ) : (
-                    <div className="w-48 h-60 bg-gray-200 rounded-xl inline-flex flex-col justify-center items-center">
-                        <div className="w-48 h-48 relative border-gray-400 overflow-hidden aspect-square flex items-center justify-center">
-                            <div className="w-12 h-5 left-[16.67px] top-[50px] absolute outline outline-[6.67px] outline-offset-[-3.33px] outline-gray-400" />
-                            <div className="w-7 h-7 left-[26.67px] top-[10px] absolute outline outline-[6.67px] outline-offset-[-3.33px] outline-gray-400" />
-                        </div>
-                    </div>
-                )}
+                    <Image src={image} alt="About David" width={300} height={300} style={{ borderRadius: "12px" }}/>
             </article>
         </section>
     );
