@@ -9,7 +9,7 @@ const Contact = () => {
         </article>
         <article className="w-full flex items-center justify-center gap-4">
             <ContactBtn text="david.jh.song@gmail.com" img="/svg/Mail.svg" link="mailto:david.jh.song@gmail.com" />
-            <ContactBtn text="LinkedIn" img="/svg/LinkedIn.svg" link="https://www.linkedin.com/in/jaino-developer/" />
+            <ContactBtn text="LinkedIn" img="/svg/Linkedin.svg" link="https://www.linkedin.com/in/jaino-developer/" />
             <ContactBtn text="GitHub" img="/svg/Github.svg" link="https://github.com/jaino-song" />
         </article>
     </section>
