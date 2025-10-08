@@ -1,6 +1,5 @@
 "use client";
-import { ReactNode } from "react";
-import SampleGif from "./SampleGif";
+// import SampleGif from "./SampleGif";
 import Image from "next/image";
 import ProjectSection from "./ProjectSection";
 

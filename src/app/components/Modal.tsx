@@ -39,7 +39,7 @@ const Modal = ({ isOpen, onClose, children }: ModalProps) => {
 
     // Clone children and pass handleClose as onClose prop
     const childrenWithProps = isValidElement(children)
-        ? cloneElement(children as React.ReactElement<any>, { onClose: handleClose })
+        ? cloneElement(children as React.ReactElement<{ onClose?: () => void }>, { onClose: handleClose })
         : children;
 
     return (
