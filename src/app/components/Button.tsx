@@ -6,9 +6,10 @@ interface ButtonProps {
     addOn?: React.ReactNode;
     width?: number;
     height?: number;
+    className?: string;
 }
 
-const Button = ({ text, onClick, bgColor, textColor, addOn, width = 44, height = 12 }: ButtonProps) => {
+const Button = ({ text, onClick, bgColor, textColor, addOn, className = "" }: ButtonProps) => {
 
   // const getDimensions = () => {
   //   const widthInPx = width * 4;
@@ -21,12 +22,11 @@ const Button = ({ text, onClick, bgColor, textColor, addOn, width = 44, height =
   return (
       <button 
         onClick={onClick} 
-        className={`bg-${bgColor} cursor-pointer rounded-lg flex justify-center items-center gap-1.5 px-4 sm:px-6 hover:opacity-90 transition-opacity`}
-        style={{ minWidth: `${width * 4}px`, height: `${height * 4}px` }}
+        className={`bg-${bgColor} cursor-pointer rounded-lg flex justify-center items-center gap-1.5 hover:opacity-90 transition-opacity ${className}`}
       >
           {addOn}
           <p
-            className={`text-${textColor} h-${height} text-sm sm:text-base font-medium font-['Poppins'] leading-relaxed flex items-center justify-center whitespace-nowrap`}
+            className={`text-${textColor} h-12 text-sm sm:text-base font-medium font-['Poppins'] leading-relaxed flex items-center justify-center whitespace-nowrap`}
           >
             {text}
           </p>
