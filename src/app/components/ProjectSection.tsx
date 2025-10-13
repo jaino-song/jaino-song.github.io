@@ -6,8 +6,8 @@ interface ProjectSectionProps {
 
 const ProjectSection = ({ title, items, iconType = 'bullet' }: ProjectSectionProps) => {
     return (
-        <section className="self-stretch px-7 py-8 bg-SubComponentBg rounded-xl flex flex-col justify-start items-start gap-4">
-            <div className="self-stretch justify-start text-Text text-2xl font-semibold font-['Poppins'] leading-snug">
+        <section className="self-stretch px-4 sm:px-6 md:px-7 py-6 sm:py-7 md:py-8 bg-SubComponentBg rounded-lg sm:rounded-xl flex flex-col justify-start items-start gap-3 sm:gap-4">
+            <div className="self-stretch justify-start text-Text text-xl sm:text-2xl font-semibold font-['Poppins'] leading-snug">
                 {title}
             </div>
             {iconType === 'checkmark' ? (
