@@ -1,6 +1,5 @@
 import NavContainer from "./nav/NavContainer";
 import ExternalLinks from "./ExternalLinks";
-import MobileNavContainer from "./nav/MobileNavContainer";
 
 const Header = () => {
   return (
