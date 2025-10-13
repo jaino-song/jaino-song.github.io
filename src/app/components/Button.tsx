@@ -21,12 +21,12 @@ const Button = ({ text, onClick, bgColor, textColor, addOn, width = 44, height =
   return (
       <button 
         onClick={onClick} 
-        className={`bg-${bgColor} cursor-pointer rounded-lg flex justify-center items-center gap-1.5`}
-        style={{ width: `${width * 4}px`, height: `${height * 4}px` }}
+        className={`bg-${bgColor} cursor-pointer rounded-lg flex justify-center items-center gap-1.5 px-4 sm:px-6 hover:opacity-90 transition-opacity`}
+        style={{ minWidth: `${width * 4}px`, height: `${height * 4}px` }}
       >
           {addOn}
           <p
-            className={`text-${textColor} h-${height} text-base font-medium font-['Poppins'] leading-relaxed flex items-center justify-center`}
+            className={`text-${textColor} h-${height} text-sm sm:text-base font-medium font-['Poppins'] leading-relaxed flex items-center justify-center whitespace-nowrap`}
           >
             {text}
           </p>

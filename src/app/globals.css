@@ -23,6 +23,8 @@
   
   --animate-fadeIn: fadeIn 0.3s ease-out;
   --animate-scaleIn: scaleIn 0.3s ease-out;
+
+  --breakpoint-phone: 450px;
 }
 
 @keyframes fadeIn {

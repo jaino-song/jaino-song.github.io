@@ -8,7 +8,7 @@ const NavButton = ({ text, onClick }: { text: string, onClick: (text: Page) => v
   
   return (
     <button 
-      className="relative w-30 h-14 rounded-[50px] cursor-pointer z-10"
+      className="relative w-24 phone:w-30 h-14 rounded-[50px] cursor-pointer z-10"
       onClick={() => {
         onClick(text as Page);
       }}
@@ -25,7 +25,7 @@ const NavButton = ({ text, onClick }: { text: string, onClick: (text: Page) => v
         />
       )}
       <motion.h3 
-        className="relative z-10 text-xl font-bold"
+        className="relative z-10 text-base text-lg md:text-xl font-bold"
         animate={{
           color: isActive ? 'var(--color-Main-Text)' : 'var(--color-Disabled)'
         }}

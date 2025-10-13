@@ -24,26 +24,26 @@ interface ProjectModalProps {
 
 const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
     return (
-        <section className="w-full min-h-full relative bg-Background rounded-[20px] p-25 flex flex-col justify-around">
+        <section className="w-full min-h-full relative bg-Background rounded-xl sm:rounded-[20px] p-4 sm:p-8 md:p-16 lg:p-25 flex flex-col justify-around">
             {/* Close Button */}
             <button
                 onClick={onClose}
-                className="absolute right-[25px] top-[25px] w-12 h-12 bg-ButtonBg rounded-xl hover:opacity-80 transition-opacity flex items-center justify-center"
+                className="absolute right-4 sm:right-[25px] top-4 sm:top-[25px] w-10 h-10 sm:w-12 sm:h-12 bg-ButtonBg rounded-lg sm:rounded-xl hover:opacity-80 transition-opacity flex items-center justify-center"
             >
-                <div className="w-10 h-10 relative overflow-hidden flex items-center justify-center">
-                    <div className="absolute w-5 h-[2px] bg-Background rotate-45" />
-                    <div className="absolute w-5 h-[2px] bg-Background -rotate-45" />
+                <div className="w-8 h-8 sm:w-10 sm:h-10 relative overflow-hidden flex items-center justify-center">
+                    <div className="absolute w-4 sm:w-5 h-[2px] bg-Background rotate-45" />
+                    <div className="absolute w-4 sm:w-5 h-[2px] bg-Background -rotate-45" />
                 </div>
             </button>
 
             {/* Content */}
-            <article className="w-full pt-1 inline-flex flex-col justify-center items-center gap-20">
+            <article className="w-full pt-1 inline-flex flex-col justify-center items-center gap-10 sm:gap-14 md:gap-20">
                 {/* Header */}
-                <div className="w-full flex flex-col justify-start items-start">
-                    <div className="text-center justify-center text-Main-Text text-5xl font-bold font-['Poppins'] leading-loose">
+                <div className="w-full flex flex-col justify-start items-start gap-2 sm:gap-3">
+                    <div className="text-center justify-center text-Main-Text text-3xl sm:text-4xl md:text-5xl font-bold font-['Poppins'] leading-tight sm:leading-loose">
                         {project.title}
                     </div>
-                    <div className="self-stretch justify-start text-Subtitle text-lg font-normal font-['Poppins'] leading-snug">
+                    <div className="self-stretch justify-start text-Subtitle text-base sm:text-lg font-normal font-['Poppins'] leading-snug">
                         {project.subtitle}
                     </div>
                 </div>
@@ -60,8 +60,8 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                 )} */}
 
                 {/* Main Content */}
-                <article className="w-full flex flex-col justify-center items-center gap-14">
-                    <div className="self-stretch flex flex-col justify-center items-center gap-10">
+                <article className="w-full flex flex-col justify-center items-center gap-8 sm:gap-10 md:gap-14">
+                    <div className="self-stretch flex flex-col justify-center items-center gap-6 sm:gap-8 md:gap-10">
                         <ProjectSection 
                             title="Project Overview" 
                             items={project.overview} 
@@ -111,13 +111,13 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                     )} */}
 
                     {/* Tech Stacks */}
-                    <div className="self-stretch flex flex-col justify-start items-start gap-4">
-                        <div className="self-stretch justify-start text-Main-Text text-3xl font-semibold font-['Poppins'] leading-normal">
+                    <div className="self-stretch flex flex-col justify-start items-start gap-3 sm:gap-4">
+                        <div className="self-stretch justify-start text-Main-Text text-2xl sm:text-3xl font-semibold font-['Poppins'] leading-normal">
                             Tech Stacks
                         </div>
                         <div className="self-stretch inline-flex justify-start items-center gap-2 flex-wrap content-center">
                             {project.techStacks.map((tech, index) => (
-                                <div key={index} className="px-4 py-2 bg-ButtonBg rounded-[20px] flex justify-center items-center">
+                                <div key={index} className="px-3 sm:px-4 py-1.5 sm:py-2 bg-ButtonBg rounded-[20px] flex justify-center items-center">
                                     <div className="justify-start text-Text text-xs font-medium font-['Poppins'] leading-3">
                                         {tech}
                                     </div>
@@ -128,19 +128,19 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                 </article>
 
                 {/* Action Buttons */}
-                <footer className="w-full max-w-[720px] flex flex-col justify-start items-start gap-4 pb-8">
-                    <div className="self-stretch inline-flex justify-center items-center gap-4 flex-wrap">
+                <footer className="w-full max-w-[720px] flex flex-col justify-start items-start gap-4 pb-4 sm:pb-8">
+                    <div className="self-stretch inline-flex justify-center items-center gap-3 sm:gap-4 flex-wrap">
                         {project.sourceCodeUrl && (
                             <a
                                 href={project.sourceCodeUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="h-12 px-6 bg-ButtonBg rounded-lg flex justify-center items-center gap-3 hover:opacity-90 transition-opacity"
+                                className="h-10 sm:h-12 px-4 sm:px-6 bg-ButtonBg rounded-lg flex justify-center items-center gap-2 sm:gap-3 hover:opacity-90 transition-opacity"
                             >
-                                <div className="w-5 h-5 relative border-white overflow-hidden flex items-center justify-center">
+                                <div className="w-4 h-4 sm:w-5 sm:h-5 relative border-white overflow-hidden flex items-center justify-center">
                                     <Image src="/svg/Github.svg" alt="Github" width={20} height={20} className="w-full h-full" />
                                 </div>
-                                <div className="justify-start text-white text-base font-semibold font-['Inter'] leading-tight">
+                                <div className="justify-start text-white text-sm sm:text-base font-semibold font-['Inter'] leading-tight">
                                     View Source Code
                                 </div>
                             </a>
@@ -150,12 +150,12 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                                 href={project.productionUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="h-12 px-6 bg-Main-Text rounded-lg flex justify-center items-center gap-3 hover:opacity-90 transition-opacity"
+                                className="h-10 sm:h-12 px-4 sm:px-6 bg-Main-Text rounded-lg flex justify-center items-center gap-2 sm:gap-3 hover:opacity-90 transition-opacity"
                             >
-                                <div className="w-5 h-5 relative border-Background overflow-hidden flex items-center justify-center">
+                                <div className="w-4 h-4 sm:w-5 sm:h-5 relative border-Background overflow-hidden flex items-center justify-center">
                                     <Image src="/svg/ExternalLink.svg" alt="External Link" width={20} height={20} className="w-full h-full" />
                                 </div>
-                                <div className="justify-start text-Background text-base font-semibold font-['Inter'] leading-tight">
+                                <div className="justify-start text-Background text-sm sm:text-base font-semibold font-['Inter'] leading-tight">
                                     View Production
                                 </div>
                             </a>
