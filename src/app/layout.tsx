@@ -23,7 +23,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={poppins.variable}>
         <Header />
-        <main className="w-full px-4 sm:px-6 md:px-8 lg:px-[10%]">
+        <main className="w-full px-[10%]">
           {children}
         </main>
       </body>

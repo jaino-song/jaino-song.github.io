@@ -37,7 +37,7 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
             </button>
 
             {/* Content */}
-            <article className="w-full pt-1 inline-flex flex-col justify-center items-center gap-10 sm:gap-14 md:gap-20">
+            <article className="w-full px-4 py-10 phone:pt-1 inline-flex flex-col justify-center items-center gap-10 sm:gap-14 md:gap-20">
                 {/* Header */}
                 <div className="w-full flex flex-col justify-start items-start gap-2 sm:gap-3">
                     <div className="text-center justify-center text-Main-Text text-3xl sm:text-4xl md:text-5xl font-bold font-['Poppins'] leading-tight sm:leading-loose">
@@ -135,7 +135,7 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                                 href={project.sourceCodeUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="h-10 sm:h-12 px-4 sm:px-6 bg-ButtonBg rounded-lg flex justify-center items-center gap-2 sm:gap-3 hover:opacity-90 transition-opacity"
+                                className="w-[50vw] phone:w-auto h-10 sm:h-12 px-4 sm:px-6 bg-ButtonBg rounded-lg flex justify-center items-center gap-2 sm:gap-3 hover:opacity-90 transition-opacity"
                             >
                                 <div className="w-4 h-4 sm:w-5 sm:h-5 relative border-white overflow-hidden flex items-center justify-center">
                                     <Image src="/svg/Github.svg" alt="Github" width={20} height={20} className="w-full h-full" />
@@ -150,7 +150,7 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                                 href={project.productionUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="h-10 sm:h-12 px-4 sm:px-6 bg-Main-Text rounded-lg flex justify-center items-center gap-2 sm:gap-3 hover:opacity-90 transition-opacity"
+                                className="w-[50vw] phone:w-auto h-10 sm:h-12 px-4 sm:px-6 bg-Main-Text rounded-lg flex justify-center items-center gap-2 sm:gap-3 hover:opacity-90 transition-opacity"
                             >
                                 <div className="w-4 h-4 sm:w-5 sm:h-5 relative border-Background overflow-hidden flex items-center justify-center">
                                     <Image src="/svg/ExternalLink.svg" alt="External Link" width={20} height={20} className="w-full h-full" />

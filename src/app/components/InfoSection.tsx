@@ -5,12 +5,11 @@ import Button from "./Button";
 interface InfoSectionProps {
     title: string;
     image: string;
-    subtitle: string;
+    subtitle: React.ReactNode;
     text: string;
     buttonText: string;
     buttonOnClick: () => void;
     id?: string;
-    width?: number;
 }
 
 const InfoSection = ({
@@ -20,13 +19,12 @@ const InfoSection = ({
     buttonText,
     buttonOnClick,
     image,
-    id,
-    width
+    id
 }: InfoSectionProps) => {
     return (
         <section id={id} className="w-full py-16 sm:py-20 md:py-30 inline-flex flex-col justify-center items-center gap-12 sm:gap-16 md:gap-20">
             {/* Title and Subtitle */}
-            <div className="w-full max-w-[800px] inline-flex flex-col justify-center items-center gap-3 sm:gap-4 md:gap-5 px-4">
+            <div className="w-full max-w-[800px] inline-flex flex-col justify-center items-center gap-10 sm:gap-4 md:gap-5">
                 <div className="self-stretch text-center justify-center text-Main-Text text-3xl sm:text-4xl md:text-5xl font-bold font-['Poppins']">
                     {title}
                 </div>
@@ -37,8 +35,8 @@ const InfoSection = ({
             {/* Text and Button and Image */}
             <article className="w-full flex flex-col lg:flex-row justify-center items-center gap-8 sm:gap-12 md:gap-16 lg:gap-20">
                 {/* Text and Button */}
-                <div className="flex flex-col justify-around items-center gap-8 sm:gap-12 md:gap-16 lg:gap-20 max-w-2xl px-4">
-                    <div className="self-stretch text-Text text-balance text-sm sm:text-base font-medium font-['Poppins'] leading-6 sm:leading-7">
+                <div className="flex flex-col justify-around items-center gap-8 sm:gap-12 md:gap-16 lg:gap-20 max-w-2xl">
+                    <div className="self-stretch text-Text text-center text-sm sm:text-base font-medium font-['Poppins'] leading-7">
                         {text}
                     </div>
                     <Button
@@ -46,7 +44,7 @@ const InfoSection = ({
                         onClick={buttonOnClick}
                         bgColor="ButtonBg"
                         textColor="Main-Text"
-                        width={width}
+                        className="w-72"
                     />
                 </div>
                 {/* Image */}
