@@ -140,7 +140,7 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                                 <div className="w-4 h-4 sm:w-5 sm:h-5 relative border-white overflow-hidden flex items-center justify-center">
                                     <Image src="/svg/Github.svg" alt="Github" width={20} height={20} className="w-full h-full" />
                                 </div>
-                                <div className="justify-start text-white text-sm sm:text-base font-semibold font-['Inter'] leading-tight">
+                                <div className="justify-start text-white text-sm sm:text-base font-semibold font-['Poppins'] leading-tight">
                                     View Source Code
                                 </div>
                             </a>
@@ -155,7 +155,7 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                                 <div className="w-4 h-4 sm:w-5 sm:h-5 relative border-Background overflow-hidden flex items-center justify-center">
                                     <Image src="/svg/ExternalLink.svg" alt="External Link" width={20} height={20} className="w-full h-full" />
                                 </div>
-                                <div className="justify-start text-Background text-sm sm:text-base font-semibold font-['Inter'] leading-tight">
+                                <div className="justify-start text-Background text-sm sm:text-base font-semibold font-['Poppins'] leading-tight">
                                     View Production
                                 </div>
                             </a>
