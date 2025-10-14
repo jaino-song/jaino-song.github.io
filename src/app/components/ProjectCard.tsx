@@ -17,10 +17,10 @@ const ProjectCard = ({ title, description, image, onClick }: ProjectCardProps) =
                     <Image src={image || ""} alt={title} fill className="object-contain object-left" style={{ borderRadius: "12px 12px 0px 0px" }} />
             </div>
             <div className="self-stretch min-h-40 p-4 sm:p-6 bg-[#3a3a3a] rounded-bl-xl rounded-br-xl flex flex-col justify-center items-center gap-4 sm:gap-6 md:gap-8">
-                <div className="self-stretch justify-start text-Main-Text text-2xl sm:text-3xl font-bold font-['Poppins'] leading-normal">
+                <div className="self-stretch justify-start text-Main-Text text-2xl sm:text-3xl font-bold font-['Poppins'] leading-snug">
                     {title}
                 </div>
-                <div className="self-stretch justify-start text-Subtitle text-sm sm:text-base font-medium font-['Poppins'] leading-tight">
+                <div className="self-stretch justify-start text-Subtitle text-sm sm:text-base font-medium font-['Poppins'] leading-normal">
                     {description}
                 </div>
             </div>

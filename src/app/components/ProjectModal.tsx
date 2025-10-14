@@ -24,11 +24,11 @@ interface ProjectModalProps {
 
 const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
     return (
-        <section className="w-full min-h-full relative bg-Background rounded-xl sm:rounded-[20px] p-4 sm:p-8 md:p-16 lg:p-25 flex flex-col justify-around">
+        <section className="w-full min-h-full relative bg-Background rounded-xl sm:rounded-[20px] px-[5%] phone:px-[10%] flex flex-col justify-around">
             {/* Close Button */}
             <button
                 onClick={onClose}
-                className="absolute right-4 sm:right-[25px] top-4 sm:top-[25px] w-10 h-10 sm:w-12 sm:h-12 bg-ButtonBg rounded-lg sm:rounded-xl hover:opacity-80 transition-opacity flex items-center justify-center"
+                className="sticky top-5 sm:top-[25px] self-end mr-2 sm:mr-[25px] w-10 h-10 sm:w-12 sm:h-12 bg-ButtonBg rounded-lg sm:rounded-xl hover:opacity-80 transition-opacity flex items-center justify-center z-50"
             >
                 <div className="w-8 h-8 sm:w-10 sm:h-10 relative overflow-hidden flex items-center justify-center">
                     <div className="absolute w-4 sm:w-5 h-[2px] bg-Background rotate-45" />
@@ -37,13 +37,13 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
             </button>
 
             {/* Content */}
-            <article className="w-full px-4 py-10 phone:pt-1 inline-flex flex-col justify-center items-center gap-10 sm:gap-14 md:gap-20">
+            <article className="w-full py-10 phone:pt-1 inline-flex flex-col justify-center items-center gap-10 sm:gap-14 md:gap-20">
                 {/* Header */}
                 <div className="w-full flex flex-col justify-start items-start gap-2 sm:gap-3">
-                    <div className="text-center justify-center text-Main-Text text-3xl sm:text-4xl md:text-5xl font-bold font-['Poppins'] leading-tight sm:leading-loose">
+                    <div className="text-center justify-center text-Main-Text text-3xl sm:text-4xl md:text-5xl font-bold font-['Poppins'] leading-normal sm:leading-loose">
                         {project.title}
                     </div>
-                    <div className="self-stretch justify-start text-Subtitle text-base sm:text-lg font-normal font-['Poppins'] leading-snug">
+                    <div className="self-stretch justify-start text-Subtitle text-base sm:text-lg font-normal font-['Poppins'] leading-normal">
                         {project.subtitle}
                     </div>
                 </div>
@@ -140,7 +140,7 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                                 <div className="w-4 h-4 sm:w-5 sm:h-5 relative border-white overflow-hidden flex items-center justify-center">
                                     <Image src="/svg/Github.svg" alt="Github" width={20} height={20} className="w-full h-full" />
                                 </div>
-                                <div className="justify-start text-white text-sm sm:text-base font-semibold font-['Inter'] leading-tight">
+                                <div className="justify-start text-white text-sm sm:text-base font-semibold font-['Poppins'] leading-tight">
                                     View Source Code
                                 </div>
                             </a>
@@ -155,7 +155,7 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                                 <div className="w-4 h-4 sm:w-5 sm:h-5 relative border-Background overflow-hidden flex items-center justify-center">
                                     <Image src="/svg/ExternalLink.svg" alt="External Link" width={20} height={20} className="w-full h-full" />
                                 </div>
-                                <div className="justify-start text-Background text-sm sm:text-base font-semibold font-['Inter'] leading-tight">
+                                <div className="justify-start text-Background text-sm sm:text-base font-semibold font-['Poppins'] leading-tight">
                                     View Production
                                 </div>
                             </a>
