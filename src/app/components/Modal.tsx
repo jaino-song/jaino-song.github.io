@@ -44,7 +44,7 @@ const Modal = ({ isOpen, onClose, children }: ModalProps) => {
 
     return (
         <div 
-            className={`fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 ${isClosing ? 'animate-fadeOut' : 'animate-fadeIn'}`}
+            className={`fixed inset-0 z-50 flex items-center justify-center ${isClosing ? 'animate-fadeOut' : 'animate-fadeIn'}`}
             onClick={handleClose}
         >
             {/* Overlay with 80% opacity black */}
@@ -52,7 +52,7 @@ const Modal = ({ isOpen, onClose, children }: ModalProps) => {
             
             {/* Modal content - responsive width and height, scrollable */}
             <div 
-                className={`relative w-full sm:w-[95vw] md:w-[90vw] lg:w-255 max-w-7xl h-[95vh] sm:h-[90vh] overflow-y-auto bg-Background rounded-xl sm:rounded-[20px] z-10 ${isClosing ? 'animate-scaleOut' : 'animate-scaleIn'}`}
+                className={`relative w-[85vw] sm:w-[90vw] lg:w-255 max-w-xl h-[90vh] sm:h-[90vh] overflow-y-auto bg-Background rounded-xl sm:rounded-[20px] z-10 ${isClosing ? 'animate-scaleOut' : 'animate-scaleIn'}`}
                 onClick={(e) => e.stopPropagation()}
             >
                 {childrenWithProps}

@@ -10,6 +10,7 @@ const ProjectSection = ({ title, items, iconType = 'bullet' }: ProjectSectionPro
             <div className="self-stretch justify-start text-Text text-xl sm:text-2xl font-semibold font-['Poppins'] leading-snug">
                 {title}
             </div>
+            {/* Checkmark */}
             {iconType === 'checkmark' ? (
                 <div className="self-stretch flex flex-col justify-start items-start gap-3">
                     {items.map((item, index) => (
@@ -19,7 +20,7 @@ const ProjectSection = ({ title, items, iconType = 'bullet' }: ProjectSectionPro
                                     <path d="M1 4L3.5 6.5L9 1" stroke="#10b981" strokeWidth="1.33" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
                             </div>
-                            <div className="flex-1 justify-start text-Subtitle text-sm font-normal font-['Poppins'] leading-none">
+                            <div className="flex-1 justify-start text-Subtitle text-sm font-normal font-['Poppins'] leading-normal">
                                 {item}
                             </div>
                         </div>
@@ -27,12 +28,13 @@ const ProjectSection = ({ title, items, iconType = 'bullet' }: ProjectSectionPro
                 </div>
             ) : (
                 <>
+                    {/* Bullet */}
                     {items.map((item, index) => (
                         <div key={index} className="w-full inline-flex justify-start items-start gap-1">
                             <div className="px-[5px] py-2 inline-flex flex-col justify-end items-center gap-2.5 overflow-hidden">
                                 <div className="w-1.5 h-1.5 bg-Subtitle rounded-full" />
                             </div>
-                            <div className="flex-1 justify-start text-Subtitle text-sm font-normal font-['Poppins'] leading-tight">
+                            <div className="flex-1 justify-start text-Subtitle text-sm font-normal font-['Poppins'] leading-normal">
                                 {item}
                             </div>
                         </div>
