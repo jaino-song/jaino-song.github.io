@@ -1,5 +1,7 @@
 "use client";
 import ProjectCard from "./ProjectCard";
+import Subtitle from "./text/Subtitle";
+import Title from "./text/Title";
 
 export interface Project {
     id: string;
@@ -21,14 +23,10 @@ const Projects = ({
     projects 
 }: ProjectsProps) => {
     return (
-        <section className="w-full py-16 sm:py-20 md:py-30 inline-flex flex-col justify-center items-center gap-12 sm:gap-16 md:gap-20">
+        <section className="w-full min-h-[75vh] py-16 sm:py-20 md:py-30 inline-flex flex-col justify-center items-center gap-12 sm:gap-16 md:gap-20">
             <div className="w-full max-w-[800px] flex flex-col justify-start items-center gap-3 sm:gap-4 md:gap-5">
-                <h2 className="self-stretch text-center justify-start text-Main-Text text-3xl sm:text-4xl md:text-5xl font-bold font-['Poppins'] leading-tight sm:leading-10">
-                    {title}
-                </h2>
-                <h4 className="self-stretch text-center justify-start text-neutral-400 text-base sm:text-lg font-medium font-['Poppins'] leading-snug">
-                    {subtitle}
-                </h4>
+                <Title>{title}</Title>
+                <Subtitle>{subtitle}</Subtitle>
             </div>
             <article className="self-stretch px-6 rounded-xl inline-flex justify-center items-center gap-10 flex-wrap content-center overflow-hidden">
                 {projects.map((project) => (
