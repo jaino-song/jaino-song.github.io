@@ -4,22 +4,37 @@ import HeroTitle from "./text/HeroTitle";
 import HeroSubTitle from "./text/HeroSubTitle";
 import { DownloadIcon } from "./icons/DownloadIcon";
 
-const Hero = () => {
-    const handleFindOutMore = () => {
-        const aboutSection = document.getElementById('about-david');
-        if (aboutSection) {
+const handleFindOutMore = () => {
+    const aboutSection = document.getElementById('about-david');
+    if (aboutSection) {
+        // Check if the element is visible (not display: none)
+        const isVisible = aboutSection.offsetParent !== null;
+        if (isVisible) {
             aboutSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+            // If first one is hidden, try to find the next one with same ID
+            const allSections = document.querySelectorAll('[id="about-david"]');
+            for (let section of allSections) {
+                if ((section as HTMLElement).offsetParent !== null) {
+                    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    break;
+                }
+            }
         }
-    };
+    }
+};
 
-    const handleDownloadCV = () => {
-        const link = document.createElement('a');
-        link.href = '/DavidSongFullStackSWEOfficial.pdf';
-        link.download = 'DavidSongFullStackSWEOfficial.pdf';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    };
+const handleDownloadCV = () => {
+    const link = document.createElement('a');
+    link.href = '/DavidSongFullStackSWEOfficial.pdf';
+    link.download = 'DavidSongFullStackSWEOfficial.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+};
+
+const Hero = () => {
+
     return (
         <section className="w-full min-h-[75vh] bg-neutral-800 inline-flex flex-col justify-center items-center sm:px-6">
             <div className="flex flex-col justify-center items-center gap-6 sm:gap-8 md:gap-10 max-w-6xl">
