@@ -14,7 +14,7 @@ const handleFindOutMore = () => {
         } else {
             // If first one is hidden, try to find the next one with same ID
             const allSections = document.querySelectorAll('[id="about-david"]');
-            for (let section of allSections) {
+            for (const section of allSections) {
                 if ((section as HTMLElement).offsetParent !== null) {
                     section.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     break;
