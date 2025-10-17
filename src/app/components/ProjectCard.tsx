@@ -11,7 +11,7 @@ const ProjectCard = ({ title, description, image, onClick }: ProjectCardProps) =
     return (
         <section 
             onClick={onClick}
-            className="w-full sm:w-80 max-w-sm h-auto bg-white rounded-xl shadow-[0px_4px_6px_0px_rgba(0,0,0,0.10)] inline-flex flex-col justify-start items-start cursor-pointer hover:shadow-[0px_6px_12px_0px_rgba(0,0,0,0.15)] transition-shadow duration-300"
+            className="w-full sm:w-80 max-w-sm bg-white rounded-xl shadow-[0px_4px_6px_0px_rgba(0,0,0,0.10)] inline-flex flex-col justify-start items-start cursor-pointer hover:shadow-[0px_6px_12px_0px_rgba(0,0,0,0.15)] transition-shadow duration-300"
         >
             <div className="self-stretch aspect-video bg-white rounded-xl flex justify-start relative overflow-hidden">
                     <Image src={image || ""} alt={title} fill className="object-contain object-left" style={{ borderRadius: "12px 12px 0px 0px" }} />
@@ -20,7 +20,7 @@ const ProjectCard = ({ title, description, image, onClick }: ProjectCardProps) =
                 <div className="self-stretch justify-start text-Main-Text text-2xl sm:text-3xl font-bold font-['Poppins'] leading-snug">
                     {title}
                 </div>
-                <div className="self-stretch justify-start text-Subtitle text-sm sm:text-base font-medium font-['Poppins'] leading-normal">
+                <div className="h-25 self-stretch justify-start text-Subtitle text-sm sm:text-base font-medium font-['Poppins'] leading-normal">
                     {description}
                 </div>
             </div>

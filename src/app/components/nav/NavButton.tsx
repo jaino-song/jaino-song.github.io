@@ -25,7 +25,7 @@ const NavButton = ({ text, onClick }: { text: string, onClick: (text: Page) => v
         />
       )}
       <motion.h3 
-        className="relative z-10 text-base text-lg md:text-xl font-bold"
+        className="relative z-10 text-base text-lg md:text-xl font-bold font-['Poppins']"
         animate={{
           color: isActive ? 'var(--color-Main-Text)' : 'var(--color-Disabled)'
         }}
