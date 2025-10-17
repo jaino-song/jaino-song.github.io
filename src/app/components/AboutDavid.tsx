@@ -9,9 +9,8 @@ const handleMoreAboutDavid = () => {
 const AboutDavid = () => {
     return (
         <> {/* Desktop Info Section */}
-            <div className="hidden phone:block">
+            <div id="about-david" className="hidden phone:block">
                 <InfoSection
-                    id="about-david"
                     image="/png/Profile.jpeg"
                     title="About David"
                     subtitle={<>Passionate About Solving Problems<br className="phone:hidden" /><span className="hidden phone:inline"> </span>With Deliberate Software Design</>}
@@ -21,9 +20,8 @@ const AboutDavid = () => {
                 />
             </div>
             {/* Mobile Info Section */}
-            <div className="phone:hidden">
+            <div id="about-david" className="phone:hidden">
                 <MobileInfoSection
-                    id="about-david"
                     image="/png/Profile.jpeg"
                     title="About David"
                     subtitle={<>Passionate About Solving Problems<br className="phone:hidden" /><span className="hidden phone:inline"> </span>With Deliberate Software Design</>}

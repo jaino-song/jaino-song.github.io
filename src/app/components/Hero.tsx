@@ -4,26 +4,22 @@ import HeroTitle from "./text/HeroTitle";
 import HeroSubTitle from "./text/HeroSubTitle";
 import { DownloadIcon } from "./icons/DownloadIcon";
 
-const handleFindOutMore = () => {
-    const aboutSection = document.getElementById('about-david');
-    if (aboutSection) {
-        aboutSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-};
-
-const handleDownloadCV = () => {
-    // Create a temporary anchor element to trigger download
-    const link = document.createElement('a');
-    link.href = '/DavidSongFullStackSWEOfficial.pdf';
-    link.download = 'DavidSongFullStackSWEOfficial.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-};
-
-
-
 const Hero = () => {
+    const handleFindOutMore = () => {
+        const aboutSection = document.getElementById('about-david');
+        if (aboutSection) {
+            aboutSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    };
+
+    const handleDownloadCV = () => {
+        const link = document.createElement('a');
+        link.href = '/DavidSongFullStackSWEOfficial.pdf';
+        link.download = 'DavidSongFullStackSWEOfficial.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
     return (
         <section className="w-full min-h-[75vh] bg-neutral-800 inline-flex flex-col justify-center items-center sm:px-6">
             <div className="flex flex-col justify-center items-center gap-6 sm:gap-8 md:gap-10 max-w-6xl">
