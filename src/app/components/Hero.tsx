@@ -38,8 +38,8 @@ const Hero = () => {
     return (
         <section className="w-full min-h-[75vh] bg-neutral-800 inline-flex flex-col justify-center items-center sm:px-6">
             <div className="flex flex-col justify-center items-center gap-6 sm:gap-8 md:gap-10 max-w-6xl">
-                <HeroTitle>Problem Solving<br />Software Engineer</HeroTitle>
-                <HeroSubTitle>Engineering Full Stack Web Solutions to Maximize Business Performance</HeroSubTitle>
+                <HeroTitle>Problem Solving Software Engineer</HeroTitle>
+                <HeroSubTitle>Engineering Comprehensive Web Solutions to Maximize Business Performance</HeroSubTitle>
                 <div className="flex flex-row justify-start items-center gap-4 sm:gap-6 md:gap-8">
                     <Button text="Find Out More" onClick={handleFindOutMore} bgColor="neutral-600" textColor="neutral-200" className="w-33 phone:w-44" />
                     <Button text="Download CV" onClick={handleDownloadCV} bgColor="white" textColor="neutral-800" addOn={<DownloadIcon className="w-5 h-5 text-neutral-800" />} className="w-33 phone:w-44"/>

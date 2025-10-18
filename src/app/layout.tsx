@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import Header from "./components/Header";
+import ClientLayout from "./components/ClientLayout";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -10,8 +10,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "David J Song | Full-Stack Software Engineer",
-  description: "David J Song is a problem solving full-stack software engineer with a passion for deriving best business outcomes with software.",
+  title: "David J Song | Frontend Software Engineer",
+  description: "David J Song is a problem-solving frontend software engineer with 3+ years of development experience in developing AI-integrated web solutions to automate workflows.",
 };
 
 export default function RootLayout({
@@ -22,10 +22,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={poppins.variable}>
-        <Header />
-        <main className="w-full px-[10%]">
-          {children}
-        </main>
+        <ClientLayout>
+          <main className="w-full px-[10%]">
+            {children}
+          </main>
+        </ClientLayout>
       </body>
     </html>
   );

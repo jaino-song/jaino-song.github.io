@@ -4,7 +4,7 @@ const ExternalLinks = () => {
   return (
     <div className="px-4 sm:px-6 py-2 mx-auto inline-flex justify-center items-center gap-4 sm:gap-6 md:gap-10">
       <a
-        href="https://www.linkedin.com/in/jaino-developer"
+        href="https://www.linkedin.com/in/jaino-dev"
         target="_blank"
         rel="noopener noreferrer"
         className="flex items-center gap-1.5 sm:gap-2 hover:opacity-80 transition-opacity"
