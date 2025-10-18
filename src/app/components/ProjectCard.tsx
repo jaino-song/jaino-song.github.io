@@ -14,7 +14,7 @@ const ProjectCard = ({ title, description, image, onClick }: ProjectCardProps) =
             className="w-full sm:w-80 max-w-sm bg-white rounded-xl shadow-[0px_4px_6px_0px_rgba(0,0,0,0.10)] inline-flex flex-col justify-start items-start cursor-pointer hover:shadow-[0px_6px_12px_0px_rgba(0,0,0,0.15)] transition-shadow duration-300"
         >
             <div className="self-stretch aspect-video bg-white rounded-xl flex justify-start relative overflow-hidden">
-                    <Image src={image || ""} alt={title} fill className="object-contain object-left" style={{ borderRadius: "12px 12px 0px 0px" }} />
+                    <Image src={image || ""} alt={title} fill sizes="(max-width: 640px) 100vw, 320px" className="object-contain object-left" style={{ borderRadius: "12px 12px 0px 0px" }} />
             </div>
             <div className="self-stretch min-h-40 p-4 sm:p-6 bg-[#3a3a3a] rounded-bl-xl rounded-br-xl flex flex-col justify-center items-center gap-4 sm:gap-6 md:gap-8">
                 <div className="self-stretch justify-start text-Main-Text text-2xl sm:text-3xl font-bold font-['Poppins'] leading-snug">
